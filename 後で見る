@@ -1,0 +1,9 @@
+div class="thumbnail">
+                        {% if result["type"] == "video" %}
+                        <a href="/watch?v={{ result['id'] }}">
+                            <img loading="lazy" src="{% if proxy == "True" %}/thumbnail?v={{ result['id'] }}{% else %}https://img.youtube.com/vi/{{ result['id'] }}/0.jpg{% endif %}" onerror="document.cookie = 'proxy=True;max-age=2592000;';">
+                            <p class="length">{{result["length"]}}</p>
+                            <p dir="auto">{{ result['title'] }}</p>
+                        </a>
+                        <div class="flexible">
+                            <a class="video-data" href="/chann
